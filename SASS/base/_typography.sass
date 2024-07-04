@@ -1,0 +1,62 @@
+body 
+    font-family: 'Roboto', sans-serif
+    font-weight: 400
+    font-size: 1.6rem
+    color: $color-gray
+    // letter-spacing: 2rem
+
+.title-first   
+    color: $color-white
+    &__main
+        font-size: 5rem
+        display: block
+        font-weight: 800
+        line-height: 6rem
+        letter-spacing: 1rem
+        text-transform: uppercase
+        margin-bottom: 1rem
+        animation-name: leftToRight
+        animation-duration: 1s  //в течении какого времени происходит анимация
+        animation-delay: .1s //задержка после прогрузки страницы
+        animation-timing-function: ease-in-out  //делает движение плавным
+        backface-visibility: hidden  //если анимация дергается или как то, что то просвечивает
+
+    &__secondary
+        display: block
+        font-weight: 200
+        font-size: 4rem
+        line-height: 4.8rem
+        letter-spacing: .5rem
+        animation-name: rightToLeft
+        animation-duration: 1s
+        animation-delay: .1s
+        animation-timing-function: ease-in-out
+        backface-visibility: hidden
+        margin-bottom: 5rem
+
+.title-secondary
+    display: inline-block
+    font-size: $font-size-h2
+    letter-spacing: 1rem
+    font-weight: 800
+    text-transform: uppercase
+    background: linear-gradient(90.05deg, rgba($color-brown-light, 0.7) 0.03%, rgba($color-brown-dark, 0.7) 99.94%)
+    -webkit-background-clip: text
+    color: transparent
+    transition: all .4s
+    backface-visibility: hidden
+    &:hover
+        transform: skewY(2deg) skewX(15deg) scale(1.1)
+        text-shadow: $shadow-h2
+
+.title-third
+    font-size: $font-size-h3
+    font-weight: 700
+    letter-spacing: .2rem
+    text-transform: uppercase
+
+.paragraph
+    font-size: $font-size-paragraph
+    line-height: 1.4
+    font-weight: 400
+    letter-spacing: .2rem
