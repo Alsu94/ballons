@@ -252,6 +252,94 @@ body {
   transform: scale(0.9);
 }
 
+.card-about {
+  padding: 2.5rem;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0.4rem 0.4rem rgba(0, 0, 0, 0.5);
+  transition: all 0.2s;
+}
+.card-about:hover {
+  transform: translateY(-1.5rem) scale(1.2);
+}
+.card-about__icon {
+  display: inline-block;
+  margin-bottom: 2.5rem;
+}
+
+.card-tour {
+  height: 52rem;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+}
+.card-tour__side {
+  height: 52rem;
+  transition: 0.8s all ease-out;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backface-visibility: hidden;
+  box-shadow: 0px 0.4rem 0.4rem rgba(0, 0, 0, 0.5);
+}
+.card-tour__side_back {
+  background: linear-gradient(120deg, rgba(186, 133, 84, 0.7) 0.03%, rgba(161, 79, 3, 0.7) 99.94%);
+  transform: rotateY(180deg);
+}
+.card-tour:hover .card-tour__side_front {
+  transform: rotateY(-180deg);
+}
+.card-tour:hover .card-tour__side_back {
+  transform: rotateY(0deg);
+}
+.card-tour__img {
+  height: 24.5rem;
+  background: #BA8554 url(../img/card-tour1.jpg) center/cover no-repeat;
+  background-blend-mode: hard-light;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
+}
+.card-tour__title {
+  font-size: 2.8rem;
+  font-weight: 300;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: right;
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+.card-tour__span {
+  background: linear-gradient(90deg, #BA8554, #A14F03);
+  padding: 1rem 2rem 0.3rem;
+}
+.card-tour__span_1 {
+  position: absolute;
+  top: -6rem;
+  right: 0;
+}
+.card-tour__span_2 {
+  position: absolute;
+  top: -2rem;
+  right: 0;
+  padding-bottom: 1rem;
+}
+.card-tour__descr ul {
+  list-style: none;
+  width: 75%;
+  margin: 0 auto;
+  color: #777;
+  font-size: 1.6rem;
+}
+.card-tour__descr ul li {
+  letter-spacing: 0.2rem;
+  text-decoration: underline;
+}
+.card-tour__descr ul li:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
 .header {
   position: relative;
   height: 90vh;
@@ -318,4 +406,12 @@ body {
 
 .section-about {
   padding-top: 8rem;
+  margin-bottom: 5rem;
+}
+
+.section-cards-about {
+  padding: 20rem 0;
+  background: linear-gradient(91.4deg, rgba(186, 133, 84, 0.7) 16.34%, rgba(0, 0, 0, 0.7) 98.8%), url(../img/cards-about-bacround.png) center/cover no-repeat;
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 80%);
+  margin-bottom: 5rem;
 }/*# sourceMappingURL=style.css.map */
