@@ -1,0 +1,45 @@
+.feedback-card
+    width: 82%
+    background: rgba($color-white, 0.75)
+    box-shadow: $box-shadow
+    margin: 0 auto
+    box-sizing: border-box
+    padding: 10rem
+    transform: skewX(-15deg)
+    position: relative
+
+    & > *
+        transform: skewX(15deg)
+    &__img
+        width: 15rem
+        height: 15rem
+        background: green
+        float: left
+        border-radius: 100rem
+        shape-outside: circle(50% at 50% 50%)
+        -webki-shape-outside: circle(50% at 50% 50%)
+        margin-right: 4rem
+        overflow: hidden
+        img
+            height: 100%
+            transform: scale(1.2)
+            transition: all .5s
+    &__box
+        @include clearfix
+    &__name
+        font-size: 2.2rem
+        font-weight: 400
+        letter-spacing: .2rem
+        color: $color-white
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -20%)
+        opacity: 0
+        transition: all .5s
+    &:hover &__name
+        transform: translate(-50%, -50%)
+        opacity: 1
+    &:hover img
+        transform: scale(1)
+        filter: blur(.3rem) brightness(50%)
