@@ -4,16 +4,29 @@
     box-shadow: $box-shadow
     border-radius: .5rem
     overflow: hidden
+    @include respond(tab-port)
+        background: linear-gradient(110deg, rgba(250,249,251,0.9) 0%, rgba(255,255,255,0.9) 507%, rgba(255,255,255,0.8) 57%, rgba(186,133,84,0.5) 57%, rgba(161,79,3,0) 100%), url(../img/bg-form.jpg) center / cover no-repeat
 
 .form
-    width: 60%
+    width: 70%
     padding-top: 5rem
+    @include respond(tab-port)
+        width: 100%
+        padding-top: 2.5rem
     &__group
         padding-left: 5rem
         // &:not(:last-child)
         margin-bottom: 3rem
+        @include respond(phone)
+            margin-bottom: 1rem
     &__group:nth-child(3)
         margin-bottom: 5rem
+        @include respond(tab-land)
+            margin-bottom: 2.5rem
+        @include respond(tab-port)
+            margin-bottom: 2.5rem
+        @include respond(phone)
+            margin-bottom: 4rem
     &__input
         font-size: $font-size-paragraph
         font-weight: 400
@@ -23,6 +36,9 @@
         border-bottom: .3rem solid transparent
         border-radius: .5rem
         width: 55%
+        @include respond(tab-port)
+            width: 90%
+            box-shadow: $box-shadow
         &:focus
             outline: none
             border-bottom: .3rem solid #66D763
@@ -42,14 +58,21 @@
         visibility: hidden
         transform: translateY(-3rem)
     &__group-radio
-        width: 40%
+        // width: 40%
+        &:not(:last-child)
+            margin-right: 2rem
         display: inline-block
+        @include respond(tab-land)
+            display: block
+            &:not(:last-child)
+                margin-bottom: 2rem
+                
     &__input-radio
         display: none
     &__label-radio
         cursor: pointer
         position: relative
-        padding: .6rem 2rem
+        padding: .6rem 3.5rem
     &__button-radio
         height: 3rem
         width: 3rem
@@ -58,7 +81,7 @@
         display: block
         position: absolute
         top: 0
-        left: -1.8rem
+        left: 0
         &::after
             content: ""
             display: block

@@ -3,7 +3,11 @@
     perspective: 150rem
     -moz-perspective: 150rem
     position: relative
-    
+    @include respond(tab-port)
+        height: 60rem
+    // @include respond(phone)
+    @media only screen and ( max-width: 900px ), (hover: none)
+        height: auto
     &__side
         height: 52rem
         transition: .8s all ease-out
@@ -16,12 +20,32 @@
         box-shadow: $box-shadow
         border-radius: .5rem
         overflow: hidden
+        @include respond(tab-port)
+            height: 60rem
+        // @include respond(phone)
+        @media only screen and ( max-width: 900px ), (hover: none)
+            height: auto
+            position: relative
         // &_front
         &_back
             background: linear-gradient(120deg, $color-brown-light 0.03%, $color-brown-dark 99.94%)
             transform: rotateY(180deg)
+            // @include respond(phone)
+            @media only screen and ( max-width: 900px ), (hover: none)
+                transform: rotateY(0deg)
+                padding: 10rem 0
+                text-align: center
+                clip-path: polygon(0 12%, 100% 0%, 100% 100%, 0 100%)
+                top: -13rem
+        
+            
+            
+        
+
     &:hover &__side_front
         transform: rotateY(-180deg)
+        @include respond(phone)
+            transform: rotateY(0deg)
     &:hover &__side_back
         transform: rotateY(0deg)
 
@@ -30,6 +54,9 @@
         background: $color-brown-light url(../img/card-tour1.jpg) center / cover no-repeat
         background-blend-mode: hard-light
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%)
+        // @include respond(tab-port)
+        @media only screen and ( max-width: 900px ), (hover: none)
+            height: 30rem
         &_1
             background: $color-brown-light url(../img/card-tour1.jpg) center / cover no-repeat
         &_2
@@ -64,6 +91,12 @@
             margin: 0 auto
             color: $color-gray
             font-size: $font-size-paragraph
+            text-align: center
+            @include respond(tab-port)
+                font-size: 2rem
+            // @include respond(phone)
+            @media only screen and ( max-width: 900px ), (hover: none)
+                padding-bottom: 15rem
             li
                 letter-spacing: .2rem
                 text-decoration: underline
@@ -76,6 +109,13 @@
         top: 50%
         left: 50%
         transform: translate(-50%, -50%)
+        // @include respond(phone)
+        @media only screen and ( max-width: 900px ), (hover: none)
+            position: relative
+            top: 0
+            left: 0
+            transform: translate(0, 0)
+
     &__text
         text-align: center
         margin-bottom: 8.7rem

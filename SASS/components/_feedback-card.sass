@@ -7,9 +7,14 @@
     padding: 10rem
     transform: skewX(-15deg)
     position: relative
+    @include respond(tab-port)
+        transform: skewX(-6deg)
+        padding: 7rem
 
     & > *
         transform: skewX(15deg)
+        @include respond(tab-port)
+            transform: skewX(6deg)
     &__img
         width: 15rem
         height: 15rem
@@ -20,12 +25,17 @@
         -webki-shape-outside: circle(50% at 50% 50%)
         margin-right: 4rem
         overflow: hidden
+        @include respond(tab-port)
+                float: none
+                margin: 0 auto 3rem
         img
             height: 100%
             transform: scale(1.2)
             transition: all .5s
+            
     &__box
         @include clearfix
+        text-align: center
     &__name
         font-size: 2.2rem
         font-weight: 400
